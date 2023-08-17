@@ -5,3 +5,8 @@ body {
 h1 {
     color: black
 }
+
+.landing-hero {
+    display: flex;
+    padding: 5%;
+}
