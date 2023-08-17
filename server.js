@@ -4,6 +4,7 @@ const PORT = 3000;
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 
+const recipeRoutes = require("./controllers/recipeController")
 const authRoutes = require("./controllers/authController");
 
 app.set("view engine", "ejs");
@@ -11,9 +12,7 @@ app.set("view engine", "ejs");
 // Middlewares
 app.use(express.static("public"));
 app.use(expressLayouts);
-app.use(
-  session({ secret: "secretrecipe", cookie: { maxAge: 3600000 } })
-);
+app.use(session({ secret: "secretrecipe", cookie: { maxAge: 720000000 } }));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,8 +24,18 @@ app.get("/", (req, res) => {
 });
 
 app.get("/recipe", (req, res) => {
-    res.render("recipe/index.ejs")
-})
+  res.render("recipe/index.ejs");
+});
+
+app.use((req, res, next) => {
+  if (!req.session.userId) {
+    res.redirect("/login");
+    return;
+  }
+  next();
+});
+
+app.use("/recipe",recipeRoutes);
 
 app.listen(PORT, () =>
   console.log("Do you love the recipes on port:", PORT, "?")

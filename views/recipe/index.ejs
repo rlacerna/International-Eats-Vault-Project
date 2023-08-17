@@ -1,7 +1,10 @@
-<% [{ name: "Orange Chicken" }, { name: "Lemon Chicken" }, { name: "General Tso Chicken" }].forEach( recipe => { %>
+<% recipes.forEach( coffee=> { %>
 
     <h1>
         <%= recipe.name %>
     </h1>
+    <p>
+        <%= recipe.description %>
+    </p>
 
     <% }) %> 
