@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <main>
+                <div>
+                    <form action="/recipe" method="post">
+                        <fieldset>
+                            <legend> Recipes </legend>
+                            <label>
+                                Name:<input type="text" name="name" placeholder=" Food name: " />
+                            </label>
+                            <label>
+                                Description:<input type="text" name="description" placeholder="Tell us about the food: " />
+                            </label>
+                            <label>
+                                Ingredient:<input type="text" name="ingredient"
+                                    placeholder=" List the ingredient: " />
+                            </label>
+                            <label>
+                                Cooking time (Min.):<input type="number" name="cookingTime" placeholder=" How long does it take to cook? " />
+                            </label>
+                            <label>
+                                Preparation:<input type="text" name="preparation" placeholder="How do you prepare the food?" />
+                            </label>
+                            <label>
+                                Serving size:<input type="number" name="servingSize" placeholder=" For how many people? " />
+                            </label>
+                        </fieldset>
+                        <input type="submit" value="Add New Recipe" />
+                    </form>
+                </div>
+            </main>
+    </body>
+
+</html>

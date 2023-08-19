@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <h2><%= recipe.name %></h2>
+      <p>
+        <strong>Description:</strong> <%= recipe.description %> <br>
+        <strong>Ingredients:</strong> <%= recipe.ingredient %> <br>
+        <strong>Cooking Time:</strong> <%= recipe.cookingTime %> min.<br>
+        <strong>Preparation:</strong> <%= recipe.preparation %> <br>
+        <strong>Serving Size:</strong> <%= recipe.servingSize %> <br>
+      </p>
+
+      <a href="/recipe/<%= recipe._id %>/edit"><button>Edit Recipe</button></a>
+
+      <form action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Recipe" />
+      </form>
+
+    </main>
+  </body>
+</html>

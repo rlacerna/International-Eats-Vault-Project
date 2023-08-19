@@ -7,7 +7,6 @@ const recipeSchema = new mongoose.Schema({
   cookingTime: Number,
   preparation: String,
   servingSize: Number,
-  servedCold: Boolean,
 });
 
 const Recipe = new mongoose.model("Recipe", recipeSchema);

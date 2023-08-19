@@ -7,6 +7,11 @@ router.get("/login", (req, res) => {
   res.render("auth/login");
 });
 
+
+router.get("/logout", (req, res) => {
+  res.redirect("/");
+});
+
 router.post("/login", async (req, res) => {
   console.log(req.body);
   let userToLogin = await User.findOne({ username: req.body.username });
