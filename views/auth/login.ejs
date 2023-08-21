@@ -1,7 +1,13 @@
-<form action="/login" method="POST">
-    
-    <input type="text" name="username"  placeholder="Enter your Username">
-    <input type="password" name="password"  placeholder="Enter your Password">
-    <button type="submit"> Log In </button>
-
+<form action="/login" method="POST" class="recipe-form">
+  <img src="https://images.squarespace-cdn.com/content/v1/53b839afe4b07ea978436183/1daa9086-0f1d-4d65-86b5-4a15a36d08d4/traditional-food-around-the-world-Travlinmad.jpg?format=1500w" alt="Authentic Dish" class="recipe-image">
+  <h2>Login to Your Recipe Book</h2>
+  <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your Username">
+  </div>
+  <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your Password">
+  </div>
+  <button type="submit" class="recipe-button">Log In</button>
 </form>

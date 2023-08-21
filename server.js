@@ -13,6 +13,7 @@ app.set("view engine", "ejs");
 
 // Middlewares
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
 app.use(expressLayouts);
 app.use(session({ secret: "secretrecipe", cookie: { maxAge: 720000000 } }));
 
