@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 // mongoose.connect - to tell mongoose what database
-mongoose.connect('mongodb+srv://renzlacerna:seicodes@rlacerna.ifp4zvb.mongodb.net/RecipeBook');
+mongoose.connect(process.env.DATABASE_URL);
 
 
 // check for error or successful connection
