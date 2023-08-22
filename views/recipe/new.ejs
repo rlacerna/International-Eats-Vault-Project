@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head.ejs") %>
-
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                <div>
+                <div class="ingrid">
                     <form action="/recipe" method="post">
                         <fieldset>
                             <legend> Recipes </legend>
@@ -20,13 +19,13 @@
                                     placeholder=" List the ingredient: " />
                             </label>
                             <label>
-                                Cooking time (Min.):<input type="number" name="cookingTime" placeholder=" How long does it take to cook? " />
+                                Preparation:<input type="text" name="preparation" placeholder="How to prepare:" />
                             </label>
                             <label>
-                                Preparation:<input type="text" name="preparation" placeholder="How do you prepare the food?" />
+                                Serving size:<input type="number" name="servingSize" placeholder=" Feeds how many " />
                             </label>
                             <label>
-                                Serving size:<input type="number" name="servingSize" placeholder=" For how many people? " />
+                                Cooking time (Min.):<input type="number" name="cookingTime" placeholder="  " />
                             </label>
                         </fieldset>
                         <input type="submit" value="Add New Recipe" />

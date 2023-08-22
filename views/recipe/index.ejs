@@ -5,21 +5,22 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-<% recipes.forEach( recipe=> { %>
-
-    <h2>
-       <a href="recipe/<%= recipe.id %>"> <%= recipe.name %> </a>
-    </h2>
-    <p>
-        Description: <%= recipe.description %> </br>
-        Ingredient:  <%= recipe.ingredient %> </br>
-        Cooking time: <%= recipe.cookingTime %> min.</br>
-        Preparation: <%= recipe.preparation %> </br>
-        Serving size : <%= recipe.servingSize %> </br>
-    </p>
-    
-    <% }) %> 
-    <div>
+        <div class="recipe-list">
+            <% recipes.forEach(recipe => { %>
+              <div class="recipe-item">
+                <h2>
+                  <a href="recipe/<%= recipe.id %>"><%= recipe.name %></a>
+                </h2>
+                <div class="recipe-details">
+                  <p>Description: <%= recipe.description %></p>
+                  <p>Ingredient: <%= recipe.ingredient %></p>
+                  <p>Cooking time: <%= recipe.cookingTime %> min.</p>
+                  <p>Preparation: <%= recipe.preparation %></p>
+                  <p>Serving size: <%= recipe.servingSize %></p>
+                </div>
+              </div>
+            <% }) %>
+          </div>
     <a href="/recipe/new"><button> Create New Recipe  </button></a>
 </div>
 </main>
