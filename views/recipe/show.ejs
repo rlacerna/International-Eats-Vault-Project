@@ -4,8 +4,9 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
+      <div class="foodie">
       <h2><%= recipe.name %></h2>
-      <p>
+      <p class="Foodie">
         <strong>Description:</strong> <%= recipe.description %> <br>
         <strong>Ingredients:</strong> <%= recipe.ingredient %> <br>
         <strong>Cooking Time:</strong> <%= recipe.cookingTime %> min.<br>
@@ -18,7 +19,7 @@
       <form action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete Recipe" />
       </form>
-
+    </div>
     </main>
   </body>
 </html>

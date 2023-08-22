@@ -41,7 +41,7 @@ router.post("/signup", async (req, res) => {
     bcrypt.hash(plainTextPassword, 10, async (err, hashedPassword) => {
       req.body.password = hashedPassword;
       let newUser = await User.create(req.body);
-      res.send(newUser);
+      res.redirect("/recipe");
     });
   }
 });
